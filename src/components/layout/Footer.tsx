@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { contact, nav, site } from "@/content/site";
 import Reveal from "@/components/ui/Reveal";
@@ -12,9 +13,15 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
           <Reveal>
             <div>
-              <div className="font-display text-3xl tracking-[0.3em] text-white">
-                {site.name}
-              </div>
+              <Link href="/" aria-label={site.fullName} className="inline-block">
+                <Image
+                  src="/images/logo-white.png"
+                  alt={site.fullName}
+                  width={1704}
+                  height={918}
+                  className="h-20 w-auto"
+                />
+              </Link>
               <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/50">
                 {site.description}
               </p>

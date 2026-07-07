@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Moon, Sun } from "lucide-react";
@@ -39,9 +40,20 @@ export default function Navbar() {
         <nav className="container-luxe flex items-center justify-between">
           <Link
             href="/"
-            className="relative z-[70] font-display text-2xl tracking-[0.35em] text-white"
+            aria-label={site.fullName}
+            className="relative z-[70] flex items-center"
           >
-            {site.name}
+            <Image
+              src="/images/logo-white.png"
+              alt={site.fullName}
+              width={1704}
+              height={918}
+              priority
+              className={cn(
+                "w-auto transition-all duration-500 ease-luxe",
+                scrolled ? "h-11" : "h-14"
+              )}
+            />
           </Link>
 
           <ul className="hidden items-center gap-8 lg:flex">

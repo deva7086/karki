@@ -13,7 +13,7 @@ export default function Timeline() {
   return (
     <section className="bg-ink-950 py-28 md:py-36">
       <div className="container-luxe">
-        <SectionHeading eyebrow="The Journey" title="A decade in frames" align="center" />
+        <SectionHeading eyebrow="The Journey" title="Our story so far" align="center" />
 
         <div ref={ref} className="relative mx-auto mt-20 max-w-3xl">
           {/* Track */}
@@ -26,7 +26,7 @@ export default function Timeline() {
           <div className="space-y-16">
             {about.timeline.map((item, i) => (
               <motion.div
-                key={item.year}
+                key={i}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-15%" }}

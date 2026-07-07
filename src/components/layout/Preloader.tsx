@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { site } from "@/content/site";
 
@@ -48,9 +49,14 @@ export default function Preloader() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <div className="mb-6 text-5xl md:text-7xl font-display tracking-[0.3em] text-white">
-              {site.name}
-            </div>
+            <Image
+              src="/images/logo-white.png"
+              alt={site.fullName}
+              width={1704}
+              height={918}
+              priority
+              className="mx-auto mb-6 h-24 w-auto md:h-32"
+            />
             <div className="mx-auto h-px w-40 overflow-hidden bg-white/10">
               <motion.div
                 className="h-full bg-gold"

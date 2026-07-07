@@ -46,7 +46,7 @@ export default function AboutPage() {
           </Reveal>
 
           <div>
-            <SectionHeading eyebrow="The Photographer" title="Chasing honest light since 2013" />
+            <SectionHeading eyebrow="The Photographer" title="Chasing honest light since 2024" />
             <div className="mt-8 space-y-5">
               {about.story.map((p, i) => (
                 <Reveal key={i} delay={i * 0.1}>

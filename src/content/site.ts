@@ -81,9 +81,9 @@ export const hero = {
 
 /* ── STATS / COUNTERS ─────────────────────────────────────────────────────── */
 export const stats = [
-  { value: 12, suffix: "+", label: "Years behind the lens" },
-  { value: 480, suffix: "+", label: "Weddings captured" },
-  { value: 35, suffix: "", label: "Awards & features" },
+  { value: 2, suffix: "+", label: "Years behind the lens" },
+  { value: 120, suffix: "+", label: "Weddings & events" },
+  { value: 15, suffix: "+", label: "Cities covered" },
   { value: 100, suffix: "%", label: "Happy couples" },
 ];
 
@@ -234,28 +234,28 @@ export const videos: VideoItem[] = [
 
 /* ── ABOUT ────────────────────────────────────────────────────────────────── */
 export const about = {
-  portrait: "/images/stage-portrait.webp",
+  portrait: "/images/founder.webp",
   name: "Karthik Keyan",
   role: "Founder & Lead Photographer",
   intro:
-    "For over a decade I've chased light across coastlines, temples and ballrooms — always in pursuit of the one honest frame that says everything words can't.",
+    "Since 2024 I've chased light across coastlines, temples and ballrooms — always in pursuit of the one honest frame that says everything words can't.",
   story: [
     "KARKEY began with a single borrowed camera and a stubborn belief that photographs should feel like memories, not poses. What started as weekend shoots for friends grew into a boutique studio trusted by families across the country.",
     "We keep our calendar small on purpose. Fewer weddings means more presence — time to notice the grandmother wiping a tear, the nervous laugh before the vows, the light doing something it will never do again.",
     "Every gallery we deliver is hand-crafted, never mass-produced. Because your story deserves an author, not an algorithm.",
   ],
   awards: [
-    "Featured — WeddingSutra 'Photographers of the Year'",
-    "Winner — South India Wedding Awards 2024",
-    "Top 30 Cinematic Wedding Films, Asia 2023",
+    "Featured — WeddingSutra 'Fresh Talent'",
+    "Winner — South India Wedding Awards 2025",
+    "Rising Studio — Cinematic Wedding Films, 2025",
     "Junebug Weddings — Hotlist Feature",
   ],
   timeline: [
-    { year: "2013", title: "The First Frame", text: "Shot our first wedding and never looked back." },
-    { year: "2016", title: "Studio Founded", text: "KARKEY opened its first studio and creative team." },
-    { year: "2019", title: "Films Division", text: "Launched our cinematic wedding films arm." },
-    { year: "2022", title: "Going National", text: "Expanded destination coverage across India & abroad." },
-    { year: "2025", title: "Award Season", text: "Recognised among the country's finest studios." },
+    { year: "2024", title: "KARKEY Begins", text: "Founded the studio and shot our very first wedding." },
+    { year: "2024", title: "First Studio", text: "Opened our creative space and built the core team." },
+    { year: "2025", title: "Films Division", text: "Launched our cinematic wedding films arm." },
+    { year: "2025", title: "Going Wider", text: "Expanded destination coverage across South India." },
+    { year: "2026", title: "Rising Fast", text: "A young studio already trusted by couples across the region." },
   ],
 };
 
