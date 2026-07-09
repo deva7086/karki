@@ -30,22 +30,26 @@ export default async function AboutPage() {
       <section className="py-28 md:py-36">
         <div className="container-luxe grid items-center gap-16 lg:grid-cols-2">
           <Reveal>
-            <div className="relative">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
-                <Image
-                  src={about.portrait}
-                  alt={about.name}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="glass absolute -bottom-6 -right-4 rounded-xl px-6 py-5 md:-right-8">
-                <div className="font-display text-2xl text-white">{about.name}</div>
-                <div className="text-xs uppercase tracking-[0.2em] text-gold">{about.role}</div>
-                <div className="mt-3 border-t border-white/10 pt-3">
-                  <div className="font-display text-lg text-white">{about.coFounder}</div>
-                  <div className="text-xs uppercase tracking-[0.2em] text-gold">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+              <Image
+                src={about.portrait}
+                alt={about.name}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950 via-ink-950/80 to-transparent p-6 pt-20 md:p-8 md:pt-24">
+                <div className="font-display text-2xl leading-tight text-white md:text-3xl">
+                  {about.name}
+                </div>
+                <div className="mt-1 text-[0.7rem] uppercase tracking-[0.2em] text-gold">
+                  {about.role}
+                </div>
+                <div className="mt-4 border-t border-white/15 pt-3">
+                  <div className="font-display text-2xl leading-tight text-white md:text-3xl">
+                    {about.coFounder}
+                  </div>
+                  <div className="mt-1 text-[0.7rem] uppercase tracking-[0.2em] text-gold">
                     {about.coFounderRole}
                   </div>
                 </div>

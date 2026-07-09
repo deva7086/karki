@@ -2,13 +2,21 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Facebook, Youtube, Link2 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { nav, site } from "@/content/site";
 import { useContent } from "@/components/ContentProvider";
 import Reveal from "@/components/ui/Reveal";
 
+const socialIcons: Record<string, LucideIcon> = {
+  Instagram,
+  Facebook,
+  YouTube: Youtube,
+};
+
 export default function Footer() {
   const { contact } = useContent();
+  const instagram = contact.socials.find((s) => s.label === "Instagram");
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-ink-950">
       <div className="container-luxe py-20">
@@ -28,18 +36,21 @@ export default function Footer() {
                 {site.description}
               </p>
               <div className="mt-6 flex gap-3">
-                {contact.socials.map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-[0.6rem] uppercase tracking-widest text-white/60 transition-colors hover:border-gold hover:text-gold"
-                    aria-label={s.label}
-                  >
-                    {s.label.slice(0, 2)}
-                  </a>
-                ))}
+                {contact.socials.map((s) => {
+                  const SocialIcon = socialIcons[s.label] ?? Link2;
+                  return (
+                    <a
+                      key={s.label}
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/60 transition-colors hover:border-gold hover:text-gold"
+                      aria-label={s.label}
+                    >
+                      <SocialIcon size={16} />
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </Reveal>
@@ -80,6 +91,18 @@ export default function Footer() {
                     <Mail size={16} className="text-gold" /> {contact.email}
                   </a>
                 </li>
+                {instagram && (
+                  <li>
+                    <a
+                      href={instagram.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 hover:text-white"
+                    >
+                      <Instagram size={16} className="text-gold" /> {instagram.handle}
+                    </a>
+                  </li>
+                )}
               </ul>
             </div>
           </Reveal>

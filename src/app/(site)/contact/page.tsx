@@ -4,7 +4,10 @@ import { whatsappLink } from "@/lib/utils";
 import PageHero from "@/components/ui/PageHero";
 import Reveal from "@/components/ui/Reveal";
 import ContactForm from "@/components/sections/ContactForm";
-import { Mail, Phone, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, MessageCircle, Instagram, Facebook, Youtube, Link2 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+const socialIcons: Record<string, LucideIcon> = { Instagram, Facebook, YouTube: Youtube };
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -87,18 +90,21 @@ export default async function ContactPage() {
             </Reveal>
 
             <div className="flex gap-3">
-              {contact.socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-[0.6rem] uppercase tracking-widest text-white/60 transition-colors hover:border-gold hover:text-gold"
-                >
-                  {s.label.slice(0, 2)}
-                </a>
-              ))}
+              {contact.socials.map((s) => {
+                const SocialIcon = socialIcons[s.label] ?? Link2;
+                return (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white/60 transition-colors hover:border-gold hover:text-gold"
+                  >
+                    <SocialIcon size={18} />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
