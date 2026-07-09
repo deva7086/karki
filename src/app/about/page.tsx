@@ -41,6 +41,12 @@ export default function AboutPage() {
               <div className="glass absolute -bottom-6 -right-4 rounded-xl px-6 py-5 md:-right-8">
                 <div className="font-display text-2xl text-white">{about.name}</div>
                 <div className="text-xs uppercase tracking-[0.2em] text-gold">{about.role}</div>
+                <div className="mt-3 border-t border-white/10 pt-3">
+                  <div className="font-display text-lg text-white">{about.coFounder}</div>
+                  <div className="text-xs uppercase tracking-[0.2em] text-gold">
+                    {about.coFounderRole}
+                  </div>
+                </div>
               </div>
             </div>
           </Reveal>

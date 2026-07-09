@@ -31,12 +31,12 @@ export const site = {
 };
 
 export const contact = {
-  phone: "+91 98765 43210",
-  phoneHref: "tel:+919876543210",
-  whatsapp: "919876543210",
+  phone: "+91 63813 31614",
+  phoneHref: "tel:+916381331614",
+  whatsapp: "916381331614",
   whatsappMessage: "Hi KARKEY, I'd love to know more about your photography packages.",
-  email: "hello@karkeyphotography.com",
-  address: "Studio 12, Creative Quarter, Chennai, Tamil Nadu 600001, India",
+  email: "karkeyphotography231@gmail.com",
+  address: "Chennai, Tamil Nadu, India",
   mapEmbed:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248844.0567207!2d80.04036!3d13.047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e61a70b6863d433!2sChennai!5e0!3m2!1sen!2sin!4v1700000000000",
   hours: [
@@ -45,10 +45,7 @@ export const contact = {
     { day: "Sunday", time: "By appointment" },
   ],
   socials: [
-    { label: "Instagram", href: "https://instagram.com", handle: "@karkeyphotography" },
-    { label: "Facebook", href: "https://facebook.com", handle: "/karkeyphotography" },
-    { label: "YouTube", href: "https://youtube.com", handle: "KARKEY Films" },
-    { label: "Pinterest", href: "https://pinterest.com", handle: "@karkeyphoto" },
+    { label: "Instagram", href: "https://instagram.com/karkey_photography", handle: "@karkey_photography" },
   ],
 };
 
@@ -81,84 +78,66 @@ export const hero = {
 
 /* ── STATS / COUNTERS ─────────────────────────────────────────────────────── */
 export const stats = [
-  { value: 2, suffix: "+", label: "Years behind the lens" },
-  { value: 120, suffix: "+", label: "Weddings & events" },
+  { value: 5, suffix: "+", label: "Years of experience" },
+  { value: 100, suffix: "+", label: "Weddings & events" },
   { value: 15, suffix: "+", label: "Cities covered" },
   { value: 100, suffix: "%", label: "Happy couples" },
 ];
 
-/* ── SERVICES ─────────────────────────────────────────────────────────────── */
-export type Service = {
+/* ── SERVICES / WEDDING PACKAGES ──────────────────────────────────────────── */
+export type PackageTier = {
   slug: string;
-  title: string;
-  icon: string; // lucide-react icon name
+  name: string;
+  price: string;
   blurb: string;
   features: string[];
-  priceFrom?: string;
   image: string;
+  featured?: boolean;
 };
 
-export const services: Service[] = [
+export const weddingPackages: PackageTier[] = [
   {
-    slug: "photography",
-    title: "Photography",
-    icon: "Camera",
-    blurb:
-      "Candid, editorial and fine-art coverage that reads like a film still — every frame intentional.",
-    features: ["Full-day coverage", "Lead + second shooter", "Hand-edited gallery", "Print-ready files"],
-    priceFrom: "₹65,000",
+    slug: "silver",
+    name: "Silver",
+    price: "₹35,000",
+    blurb: "Essential wedding coverage for intimate celebrations.",
+    features: ["Single-day coverage", "Candid + traditional photos", "Hand-edited gallery", "Online delivery"],
     image: "/images/bride-white.webp",
   },
   {
-    slug: "videography",
-    title: "Videography",
-    icon: "Video",
-    blurb:
-      "Cinematic motion capture with pro audio, gimbals and colour grading for a truly filmic look.",
-    features: ["4K / 6K capture", "Multi-cam setup", "Licensed music", "Colour grade"],
-    priceFrom: "₹85,000",
-    image: "/images/last-light.webp",
-  },
-  {
-    slug: "drone-shoots",
-    title: "Drone Shoots",
-    icon: "Send",
-    blurb:
-      "Sweeping aerial perspectives that give your story a breathtaking sense of scale and place.",
-    features: ["Licensed pilots", "4K aerials", "Venue reveals", "Sunset flights"],
-    priceFrom: "₹25,000",
-    image: "/images/beach-freedom.webp",
-  },
-  {
-    slug: "wedding-films",
-    title: "Wedding Films",
-    icon: "Clapperboard",
-    blurb:
-      "A 3–7 minute cinematic film plus highlight teaser — the day you'll relive again and again.",
-    features: ["Story-led edit", "Teaser + feature film", "Vows & speeches", "Same-day edit option"],
-    priceFrom: "₹1,20,000",
+    slug: "gold",
+    name: "Gold",
+    price: "₹55,000",
+    blurb: "Our most-loved balance of photo and cinematic coverage.",
+    features: ["Full-day coverage", "Photo + video team", "Highlight teaser", "Print-ready files"],
     image: "/images/couple-indoor.webp",
   },
   {
-    slug: "albums",
-    title: "Fine-Art Albums",
-    icon: "BookOpen",
-    blurb:
-      "Museum-grade layflat albums, hand-bound in Italian leather — designed, not just printed.",
-    features: ["Layflat spreads", "Italian leather", "Archival prints", "Custom design"],
-    priceFrom: "₹18,000",
-    image: "/images/yellow-saree.webp",
+    slug: "platinum",
+    name: "Platinum",
+    price: "₹75,000",
+    blurb: "Extended cinematic coverage for the full celebration.",
+    features: ["Multi-day coverage", "Lead + second shooter", "Cinematic wedding film", "Premium album"],
+    image: "/images/last-light.webp",
+    featured: true,
   },
   {
-    slug: "outdoor-shoots",
-    title: "Outdoor Shoots",
-    icon: "Sun",
-    blurb:
-      "Pre-wedding, maternity and portrait sessions at handpicked locations, golden-hour perfected.",
-    features: ["Location scouting", "Styling guidance", "2–3 hr session", "Golden hour"],
-    priceFrom: "₹22,000",
-    image: "/images/ocean-breeze.webp",
+    slug: "diamond",
+    name: "Diamond",
+    price: "₹1,05,000",
+    blurb: "The complete signature experience — no detail spared.",
+    features: ["Everything in Platinum", "Drone aerials", "Pre-wedding shoot", "Luxury layflat album"],
+    image: "/images/yellow-saree.webp",
   },
+];
+
+/* Standalone add-on pricing (outside the wedding packages) */
+export type AddOn = { name: string; price: string };
+
+export const otherPricing: AddOn[] = [
+  { name: "Pre-Wedding Shoot", price: "₹15,000" },
+  { name: "Drone Shoots", price: "₹12,000 – ₹15,000" },
+  { name: "Outdoor Shoots", price: "₹8,000 / 2 hrs (hourly)" },
 ];
 
 /* ── PORTFOLIO CATEGORIES & IMAGES ────────────────────────────────────────── */
@@ -235,27 +214,26 @@ export const videos: VideoItem[] = [
 /* ── ABOUT ────────────────────────────────────────────────────────────────── */
 export const about = {
   portrait: "/images/founder.webp",
-  name: "Karthik Keyan",
+  name: "Yugendra Raja Karthikeyan",
   role: "Founder & Lead Photographer",
+  coFounder: "Samruthi K",
+  coFounderRole: "Co-Founder",
   intro:
-    "Since 2024 I've chased light across coastlines, temples and ballrooms — always in pursuit of the one honest frame that says everything words can't.",
+    "A passionate freelance photographer with 5+ years of experience, specializing in corporate events, event coverage and visual storytelling.",
   story: [
-    "KARKEY began with a single borrowed camera and a stubborn belief that photographs should feel like memories, not poses. What started as weekend shoots for friends grew into a boutique studio trusted by families across the country.",
-    "We keep our calendar small on purpose. Fewer weddings means more presence — time to notice the grandmother wiping a tear, the nervous laugh before the vows, the light doing something it will never do again.",
-    "Every gallery we deliver is hand-crafted, never mass-produced. Because your story deserves an author, not an algorithm.",
+    "A passionate freelance photographer with 5+ years of experience, specializing in corporate events, event coverage, and visual storytelling.",
+    "I have organized and covered numerous events, and worked as a DOP for short films and a pilot film.",
+    "With a strong eye for detail and composition, I aim to create impactful visuals that tell powerful stories and elevate every project I work on.",
   ],
   awards: [
-    "Featured — WeddingSutra 'Fresh Talent'",
-    "Winner — South India Wedding Awards 2025",
-    "Rising Studio — Cinematic Wedding Films, 2025",
-    "Junebug Weddings — Hotlist Feature",
+    "Best Photograph — Shrimathi Devkunvar Nanalal Bhatt Vaishnav College for Women, 2024",
+    "Best Event Management — Shrimathi Devkunvar Nanalal Bhatt Vaishnav College for Women, 2025",
   ],
   timeline: [
-    { year: "2024", title: "KARKEY Begins", text: "Founded the studio and shot our very first wedding." },
-    { year: "2024", title: "First Studio", text: "Opened our creative space and built the core team." },
-    { year: "2025", title: "Films Division", text: "Launched our cinematic wedding films arm." },
-    { year: "2025", title: "Going Wider", text: "Expanded destination coverage across South India." },
-    { year: "2026", title: "Rising Fast", text: "A young studio already trusted by couples across the region." },
+    { year: "2024", title: "KARKEY Begins", text: "The studio was born — where our journey behind the lens began." },
+    { year: "2024", title: "Our First Event", text: "Covered our very first event and never looked back." },
+    { year: "2025", title: "First Film Event", text: "Stepped into cinema as DOP for short films and a pilot film." },
+    { year: "2026", title: "Rising Fast", text: "A young studio already trusted by clients across the region." },
   ],
 };
 

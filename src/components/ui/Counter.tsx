@@ -14,7 +14,9 @@ export default function Counter({
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-20%" });
-  const [n, setN] = useState(0);
+  // Default to the final value so the stat is always correct, even if the
+  // in-view animation never fires; reset to 0 and count up when scrolled in.
+  const [n, setN] = useState(value);
 
   useEffect(() => {
     if (!inView) return;
@@ -25,7 +27,9 @@ export default function Counter({
       const eased = 1 - Math.pow(1 - p, 3);
       setN(Math.round(eased * value));
       if (p < 1) raf = requestAnimationFrame(tick);
+      else setN(value);
     };
+    setN(0);
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
   }, [inView, value, duration]);

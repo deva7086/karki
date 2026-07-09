@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Check } from "lucide-react";
-import { services } from "@/content/site";
+import { weddingPackages, otherPricing } from "@/content/site";
 
 type State = "idle" | "sending" | "sent";
 
@@ -46,9 +46,14 @@ export default function ContactForm() {
         <div className="relative">
           <select id="service" name="service" required defaultValue="" className={`${field} appearance-none`}>
             <option value="" disabled className="bg-ink-950">Select a service</option>
-            {services.map((s) => (
-              <option key={s.slug} value={s.title} className="bg-ink-950">
-                {s.title}
+            {weddingPackages.map((p) => (
+              <option key={p.slug} value={`${p.name} Package`} className="bg-ink-950">
+                {p.name} Package — {p.price}
+              </option>
+            ))}
+            {otherPricing.map((p) => (
+              <option key={p.name} value={p.name} className="bg-ink-950">
+                {p.name}
               </option>
             ))}
             <option value="Other" className="bg-ink-950">Something else</option>
