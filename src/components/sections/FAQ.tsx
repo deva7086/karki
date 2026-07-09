@@ -3,10 +3,11 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Plus } from "lucide-react";
-import { faqs } from "@/content/site";
+import { useContent } from "@/components/ContentProvider";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function FAQ() {
+  const { faqs } = useContent();
   const [open, setOpen] = useState<number | null>(0);
 
   return (

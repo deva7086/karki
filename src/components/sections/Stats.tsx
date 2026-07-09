@@ -1,10 +1,11 @@
 "use client";
 
-import { stats } from "@/content/site";
+import { useContent } from "@/components/ContentProvider";
 import Counter from "@/components/ui/Counter";
 import Reveal from "@/components/ui/Reveal";
 
 export default function Stats() {
+  const { stats } = useContent();
   return (
     <section className="border-y border-white/10 bg-ink-950">
       <div className="container-luxe grid grid-cols-2 gap-y-12 py-16 md:grid-cols-4">

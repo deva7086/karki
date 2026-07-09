@@ -3,11 +3,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Check } from "lucide-react";
-import { weddingPackages, otherPricing } from "@/content/site";
+import { useContent } from "@/components/ContentProvider";
 
 type State = "idle" | "sending" | "sent";
 
 export default function ContactForm() {
+  const { weddingPackages, otherPricing } = useContent();
   const [state, setState] = useState<State>("idle");
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

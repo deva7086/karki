@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { about } from "@/content/site";
+import { about as aboutDefault } from "@/content/site";
+import { getContent } from "@/lib/content";
 import PageHero from "@/components/ui/PageHero";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -11,10 +12,11 @@ import { Award } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About",
-  description: about.intro,
+  description: aboutDefault.intro,
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const { about } = await getContent();
   return (
     <>
       <PageHero

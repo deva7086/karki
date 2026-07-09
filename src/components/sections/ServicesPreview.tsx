@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { weddingPackages } from "@/content/site";
+import { useContent } from "@/components/ContentProvider";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function ServicesPreview() {
+  const { weddingPackages } = useContent();
   return (
     <section className="relative overflow-hidden bg-ink-950 py-28 md:py-36">
       <div className="container-luxe">

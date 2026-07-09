@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { contact, portfolio } from "@/content/site";
+import { getContent } from "@/lib/content";
 import { whatsappLink } from "@/lib/utils";
 import PageHero from "@/components/ui/PageHero";
 import Reveal from "@/components/ui/Reveal";
@@ -12,7 +12,8 @@ export const metadata: Metadata = {
     "Get in touch with KARKEY Photography to check availability and start planning your session.",
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const { contact, portfolio } = await getContent();
   return (
     <>
       <PageHero
@@ -42,7 +43,7 @@ export default function ContactPage() {
               {[
                 { icon: Phone, label: "Call us", value: contact.phone, href: contact.phoneHref },
                 { icon: Mail, label: "Email", value: contact.email, href: `mailto:${contact.email}` },
-                { icon: MessageCircle, label: "WhatsApp", value: "Chat with us", href: whatsappLink() },
+                { icon: MessageCircle, label: "WhatsApp", value: "Chat with us", href: whatsappLink(contact) },
                 { icon: MapPin, label: "Studio", value: contact.address },
               ].map((item, i) => (
                 <Reveal key={item.label} delay={i * 0.08}>

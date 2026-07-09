@@ -4,13 +4,15 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { Play, X } from "lucide-react";
-import { videos, type VideoItem } from "@/content/site";
+import { type VideoItem } from "@/content/site";
+import { useContent } from "@/components/ContentProvider";
 import { cn } from "@/lib/utils";
 
 export default function VideoGallery() {
+  const { videos } = useContent();
   const categories = useMemo(
     () => ["All", ...Array.from(new Set(videos.map((v) => v.category)))],
-    []
+    [videos]
   );
   const [active, setActive] = useState("All");
   const [current, setCurrent] = useState<VideoItem | null>(null);

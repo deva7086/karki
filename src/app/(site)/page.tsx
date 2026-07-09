@@ -5,9 +5,11 @@ import ServicesPreview from "@/components/sections/ServicesPreview";
 import Testimonials from "@/components/sections/Testimonials";
 import InstagramPreview from "@/components/sections/InstagramPreview";
 import CTA from "@/components/sections/CTA";
-import { site, contact } from "@/content/site";
+import { site } from "@/content/site";
+import { getContent } from "@/lib/content";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const { contact } = await getContent();
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",

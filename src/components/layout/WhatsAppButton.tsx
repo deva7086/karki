@@ -2,11 +2,13 @@
 
 import { motion } from "framer-motion";
 import { whatsappLink } from "@/lib/utils";
+import { useContent } from "@/components/ContentProvider";
 
 export default function WhatsAppButton() {
+  const { contact } = useContent();
   return (
     <motion.a
-      href={whatsappLink()}
+      href={whatsappLink(contact)}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"

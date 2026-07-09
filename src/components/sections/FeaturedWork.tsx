@@ -4,13 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { portfolio } from "@/content/site";
+import { useContent } from "@/components/ContentProvider";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
 
-const featured = portfolio.slice(0, 5);
-
 export default function FeaturedWork() {
+  const { portfolio } = useContent();
+  const featured = portfolio.slice(0, 5);
   return (
     <section className="relative py-28 md:py-36">
       <div className="container-luxe">

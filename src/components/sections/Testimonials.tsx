@@ -4,10 +4,11 @@ import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Star, Quote, ArrowLeft, ArrowRight } from "lucide-react";
-import { testimonials } from "@/content/site";
+import { useContent } from "@/components/ContentProvider";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function Testimonials() {
+  const { testimonials } = useContent();
   const [i, setI] = useState(0);
   const [dir, setDir] = useState(1);
   const t = testimonials[i];

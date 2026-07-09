@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { gallery } from "@/content/site";
+import { getContent } from "@/lib/content";
 import PageHero from "@/components/ui/PageHero";
 import InfiniteGallery from "@/components/gallery/InfiniteGallery";
 
@@ -8,7 +8,9 @@ export const metadata: Metadata = {
   description: "An immersive, ever-scrolling gallery of KARKEY Photography's finest frames.",
 };
 
-export default function GalleryPage() {
+export default async function GalleryPage() {
+  const { portfolio } = await getContent();
+  const gallery = portfolio.map((p) => p.src);
   return (
     <>
       <PageHero

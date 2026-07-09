@@ -3,12 +3,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Instagram } from "lucide-react";
-import { instagram, contact } from "@/content/site";
+import { useContent } from "@/components/ContentProvider";
 import Reveal from "@/components/ui/Reveal";
 
-const ig = contact.socials.find((s) => s.label === "Instagram");
-
 export default function InstagramPreview() {
+  const { instagram, contact } = useContent();
+  const ig = contact.socials.find((s) => s.label === "Instagram");
   return (
     <section className="bg-ink-950 py-28 md:py-36">
       <div className="container-luxe">

@@ -3,10 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { contact, nav, site } from "@/content/site";
+import { nav, site } from "@/content/site";
+import { useContent } from "@/components/ContentProvider";
 import Reveal from "@/components/ui/Reveal";
 
 export default function Footer() {
+  const { contact } = useContent();
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-ink-950">
       <div className="container-luxe py-20">

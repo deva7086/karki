@@ -5,7 +5,5 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-import { contact } from "@/content/site";
-
-export const whatsappLink = () =>
-  `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(contact.whatsappMessage)}`;
+export const whatsappLink = (c: { whatsapp: string; whatsappMessage: string }) =>
+  `https://wa.me/${c.whatsapp}?text=${encodeURIComponent(c.whatsappMessage)}`;

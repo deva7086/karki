@@ -2,14 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 import { site } from "@/content/site";
-import SmoothScroll from "@/components/layout/SmoothScroll";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import Preloader from "@/components/layout/Preloader";
-import ScrollProgress from "@/components/layout/ScrollProgress";
-import BackToTop from "@/components/layout/BackToTop";
-import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import ThemeProvider from "@/components/layout/ThemeProvider";
+
+// Content is admin-editable and read from KV per request.
+export const dynamic = "force-dynamic";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -64,17 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`} suppressHydrationWarning>
       <body>
-        <ThemeProvider>
-          <Preloader />
-          <ScrollProgress />
-          <SmoothScroll>
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-          </SmoothScroll>
-          <WhatsAppButton />
-          <BackToTop />
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

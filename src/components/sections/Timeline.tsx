@@ -2,10 +2,11 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { about } from "@/content/site";
+import { useContent } from "@/components/ContentProvider";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function Timeline() {
+  const { about } = useContent();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start center", "end center"] });
   const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);

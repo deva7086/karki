@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { testimonials, portfolio } from "@/content/site";
+import { getContent } from "@/lib/content";
 import PageHero from "@/components/ui/PageHero";
 import Reveal from "@/components/ui/Reveal";
 import Testimonials from "@/components/sections/Testimonials";
@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   description: "Real words from real couples and families who trusted KARKEY Photography.",
 };
 
-export default function TestimonialsPage() {
+export default async function TestimonialsPage() {
+  const { testimonials, portfolio } = await getContent();
   return (
     <>
       <PageHero

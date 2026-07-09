@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { weddingPackages, otherPricing } from "@/content/site";
+import { getContent } from "@/lib/content";
 import PageHero from "@/components/ui/PageHero";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -15,7 +15,8 @@ export const metadata: Metadata = {
     "Wedding packages by KARKEY Photography — Silver, Gold, Platinum and Diamond — plus pre-wedding, drone and outdoor shoots.",
 };
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const { weddingPackages, otherPricing } = await getContent();
   return (
     <>
       <PageHero

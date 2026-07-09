@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { portfolio, portfolioCategories } from "@/content/site";
+import { portfolioCategories } from "@/content/site";
+import { getContent } from "@/lib/content";
 import PageHero from "@/components/ui/PageHero";
 import MasonryGallery from "@/components/gallery/MasonryGallery";
 import CTA from "@/components/sections/CTA";
@@ -10,7 +11,8 @@ export const metadata: Metadata = {
     "Explore KARKEY Photography's portfolio — weddings, pre-wedding, engagement, maternity, baby, fashion, events and commercial photography.",
 };
 
-export default function PortfolioPage() {
+export default async function PortfolioPage() {
+  const { portfolio } = await getContent();
   return (
     <>
       <PageHero

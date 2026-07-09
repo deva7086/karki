@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Static HTML export -> deployable to Firebase Hosting free (Spark) plan.
-  output: "export",
+  // Server-rendered on Vercel (dynamic content + admin). No static export.
   reactStrictMode: true,
   images: {
-    // No server on static hosting, so serve images as-is (already WebP-optimised).
+    // Local /public images are already WebP; remote media comes from Cloudinary.
     unoptimized: true,
     formats: ["image/avif", "image/webp"],
     remotePatterns: [

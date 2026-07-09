@@ -4,11 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { hero } from "@/content/site";
+import { useContent } from "@/components/ContentProvider";
 import TextReveal from "@/components/ui/TextReveal";
 import Magnetic from "@/components/ui/Magnetic";
 
 export default function CTA() {
+  const { hero } = useContent();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);

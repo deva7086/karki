@@ -5,10 +5,11 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown } from "lucide-react";
-import { hero } from "@/content/site";
+import { useContent } from "@/components/ContentProvider";
 import Magnetic from "@/components/ui/Magnetic";
 
 export default function Hero() {
+  const { hero } = useContent();
   const ref = useRef<HTMLDivElement>(null);
   const [slide, setSlide] = useState(0);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
