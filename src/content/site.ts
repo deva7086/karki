@@ -45,7 +45,7 @@ export const contact = {
     { day: "Sunday", time: "By appointment" },
   ],
   socials: [
-    { label: "Instagram", href: "https://instagram.com/karkey__photography", handle: "@karkey__photography" },
+    { label: "Instagram", href: "https://instagram.com/karkey_photography", handle: "@karkey_photography" },
   ],
 };
 

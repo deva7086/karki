@@ -15,7 +15,7 @@ export default function InstagramPreview() {
         <div className="flex flex-col items-center text-center">
           <Reveal>
             <span className="eyebrow">
-              <Instagram size={14} /> {ig?.handle ?? "@karkey__photography"}
+              <Instagram size={14} /> {ig?.handle ?? "@karkey_photography"}
             </span>
           </Reveal>
           <Reveal delay={0.1}>
